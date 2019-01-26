@@ -25,9 +25,9 @@ gem 'rmagick'
 gem 'slim-rails'
 gem 'html2slim'
 gem "font-awesome-rails"
+gem 'mysql2'
 
 group :development do
-  gem 'sqlite3'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
