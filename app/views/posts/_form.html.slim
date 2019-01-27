@@ -1,0 +1,10 @@
+= form_with model: @post, local: true do |f|
+  .form_group
+    = f.label :title, class: 'form_control'
+    = f.text_field :title , class: 'form_control'
+  br
+  .form_group
+    = f.label :content , class: 'form_control'
+    = f.text_area :content, class: 'form_control'
+  .form_action
+    = f.submit '作成', class: 'form_control'

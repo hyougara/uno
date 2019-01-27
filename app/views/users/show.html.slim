@@ -1,2 +1,6 @@
 h1 Users#show
 p Find me in app/views/users/show.html.slim
+
+- @post.each do |post|
+  ul
+    li = link_to post.title, post

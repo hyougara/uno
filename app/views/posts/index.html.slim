@@ -1,0 +1,7 @@
+h1 Posts#index
+p Find me in app/views/posts/index.html.slim
+- @posts.each do |post|
+  ul
+    li = post.title
+    li = post.content
+    li = link_to post.user.name, post.user
