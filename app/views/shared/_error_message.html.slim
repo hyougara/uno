@@ -1,0 +1,9 @@
+- if @post.errors.any?
+  #error_explanation
+    h2 
+      = pluralize(@post.errors.count, "件")
+      | 入力していないところがあります
+    ul
+      - @post.errors.full_messages.each do |message|
+        li
+          = message

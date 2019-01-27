@@ -1,7 +1,29 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
+h1 みんなの投稿
+p = paginate @posts
 - @posts.each do |post|
-  ul
-    li = post.title
-    li = post.content
-    li = link_to post.user.name, post.user
+  br
+  hr
+  / お気に入り解除だけできない
+  - if post.favorites.present?
+    span お気に入り解除: 
+    = link_to post.favorites.count, post_favorites_path(post.id), method: :delete
+  - else
+    span お気に入りにする: 
+    = link_to post.favorites.count, post_favorites_path(post.id), method: :post
+  br
+  span タイトル: 
+  = post.title
+  br
+  span 内容: 
+  = post.content
+  br
+  span 投稿者: 
+  = link_to post.user.name, post.user
+  br
+  span お気に入り数: 
+  = post.favorites.count
+  br
+  span 投稿時間:
+  = time_ago_in_words(post.created_at) + "前"
+
+p = paginate @posts

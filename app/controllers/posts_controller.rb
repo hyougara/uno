@@ -3,9 +3,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def index  
-    @posts = Post.all
-    # @q = current_user.posts.ransack(params[:q])
-    # @posts = @q.result.page( params[:page])
+    @posts = Post.all.order(created_at: :desc).page params[:page]
+
   end
 
   def show

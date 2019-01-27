@@ -1,6 +1,15 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
+h1 = link_to @user.name, @user
 
+h2 = "#{@user.name}"+"の投稿"
 - @post.each do |post|
-  ul
-    li = link_to post.title, post
+  br
+  span = link_to post.title, post
+
+h2 = "#{@user.name}" + "がお気に入りした投稿"
+- if @favorite_posts.present?
+  - @favorite_posts.each do |favorite|
+    br
+    span 
+    =  link_to favorite.title, favorite
+
+
