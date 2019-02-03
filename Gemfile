@@ -27,6 +27,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem "font-awesome-rails"
 gem 'mysql2'
+gem 'carrierwave'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

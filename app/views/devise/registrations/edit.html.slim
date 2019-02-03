@@ -15,6 +15,14 @@ h2
     div
       | Currently waiting confirmation for: 
       = resource.unconfirmed_email
+
+  .field
+    = f.label :user_image
+    = f.file_field :user_image
+    = f.label :remove_user_image, '画像を削除する'
+    = f.check_box :remove_user_image
+    = f.hidden_field :user_image_cache
+
   .field
     = f.label :password
     i
